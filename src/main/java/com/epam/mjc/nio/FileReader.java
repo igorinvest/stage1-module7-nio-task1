@@ -2,6 +2,7 @@ package com.epam.mjc.nio;
 
 import java.io.*;
 import java.nio.*;
+import java.nio.charset.StandardCharsets;
 import java.util.logging.Logger;
 
 
@@ -28,12 +29,7 @@ public class FileReader {
             }
         }
 
-        String st = "";
-        try {
-            st = new String(bytes, "UTF-8");
-        } catch (IOException e) {
-            log.info(e.toString());
-        }
+        String st = new String(bytes, StandardCharsets.UTF_8);
 
         String name = "";
         Integer age = null;
